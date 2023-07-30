@@ -3994,7 +3994,7 @@
     "/Users/xbz/.nuget/packages/": {}
   },
   "project": {
-    "version": "0.1.0",
+    "version": "1.0.0",
     "restore": {
       "projectUniqueName": "/Users/xbz/Developer/1/blogger/BloggerAPI/BloggerAPI.csproj",
       "projectName": "BloggerAPI",

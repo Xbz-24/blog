@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v7.0": {
-      "BloggerAPI/0.1.0": {
+      "BloggerAPI/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.OpenApi": "7.0.9",
           "Microsoft.EntityFrameworkCore.Design": "7.0.9",
@@ -708,7 +708,7 @@
     }
   },
   "libraries": {
-    "BloggerAPI/0.1.0": {
+    "BloggerAPI/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
