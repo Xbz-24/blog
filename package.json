@@ -15,7 +15,8 @@
   "scripts": {
     "start": "concurrently \"npm run backend\" \"npm run frontend\"",
     "backend": "cd BloggerAPI && dotnet run",
-    "frontend": "react-scripts start"
+    "frontend": "react-scripts start",
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
