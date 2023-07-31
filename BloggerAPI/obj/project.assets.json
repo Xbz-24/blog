@@ -3994,7 +3994,7 @@
     "/Users/xbz/.nuget/packages/": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "0.1.0",
     "restore": {
       "projectUniqueName": "/Users/xbz/Developer/1/blogger/BloggerAPI/BloggerAPI.csproj",
       "projectName": "BloggerAPI",
@@ -4009,8 +4009,7 @@
         "net7.0"
       ],
       "sources": {
-        "/usr/local/share/dotnet/library-packs": {},
-        "/usr/local/share/dotnet/sdk/7.0.306/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
+        "/Users/xbz/.tea/dotnet.microsoft.com/v7.0.306/sdk/7.0.306/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4075,7 +4074,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.306/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/Users/xbz/.tea/dotnet.microsoft.com/v7.0.306/sdk/7.0.306/RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -11,6 +11,10 @@ const Posts = ({ onSelectPost }) => {
   const [selectedPostId, setSelectedPostId] = useState(null);
 
   useEffect(() => {
+    fetchPosts();
+  }, []);
+
+  const fetchPosts = () => {
     // Fetch all posts from the backend API
     axios.get('/api/posts')
       .then(response => {
@@ -21,7 +25,20 @@ const Posts = ({ onSelectPost }) => {
         setError('Failed to fetch posts.');
         setIsLoading(false);
       });
-  }, []);
+  };
+
+  const handleAddPost = (newPostData) => {
+    // Send a post request to the backend to add the new post
+    axios.post('/api/posts', newPostData)
+      .then(response => {
+        // Update the posts state with the newly added post
+        setPosts(prevPosts => [...prevPosts, response.data]);
+      })
+      .catch(error => {
+        console.error('Error adding post:', error);
+        setError('Failed to add a new post.');
+      });
+  };
 
   const handleDeletePost = (postId) => {
     setSelectedPostId(postId);
@@ -61,6 +78,9 @@ const Posts = ({ onSelectPost }) => {
           </li>
         ))}
       </ul>
+      <button onClick={() => handleAddPost({ title: 'New Post', content: 'Content of the new post' })}>
+        Add New Post
+      </button>
       <ConfirmDeleteModal
         isOpen={selectedPostId !== null}
         onClose={() => setSelectedPostId(null)}

@@ -1,30 +1,16 @@
-import React, { useState } from 'react';
-import Posts from './Posts';
-import AddPost from './AddPost';
-import PostDetail from './PostDetail';
-import EditPost from './EditPost';
-import DeletePost from './DeletePost';
+import React from 'react';
+import NewPostForm from './NewPostForm';
+import BlogPosts from './BlogPost';
 
-const App = () => {
-  const [selectedPostId, setSelectedPostId] = useState(null);
-
-  const handlePostDelete = () => {
-    setSelectedPostId(null);
-  };
-
+function App() {
   return (
     <div>
-      <Posts onSelectPost={setSelectedPostId} />
-      {selectedPostId && (
-        <div>
-          <PostDetail postId={selectedPostId} />
-          <EditPost postId={selectedPostId} />
-          <DeletePost postId={selectedPostId} onDelete={handlePostDelete} />
-        </div>
-      )}
-      <AddPost />
+      <h1>My Blog</h1>
+      <NewPostForm />
+      <BlogPosts />
+      {/* Other components and content */}
     </div>
   );
-};
+}
 
 export default App;
