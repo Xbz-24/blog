@@ -23,8 +23,20 @@ namespace BloggerAPI.Controllers
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Post>>> GetPosts()
     {
-      return await _context.Posts.ToListAsync();
+        try
+        {
+            return await _context.Posts.ToListAsync();
+        }
+        catch (Exception ex)
+        {
+            // Log the exception message - replace this with your logging framework of choice
+            Console.WriteLine(ex.Message);
+
+            // Optionally return the exception message in the API response
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
     }
+
 
     // POST: api/posts
     [HttpPost]

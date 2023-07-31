@@ -14,18 +14,15 @@ const Posts = ({ onSelectPost }) => {
     fetchPosts();
   }, []);
 
-  const fetchPosts = () => {
-    // Fetch all posts from the backend API
-    axios.get('/api/posts')
-      .then(response => {
+async function fetchPosts() {
+    try {
+        const response = await axios.get('http://localhost:3000/api/posts');
         setPosts(response.data);
-        setIsLoading(false);
-      })
-      .catch(error => {
-        setError('Failed to fetch posts.');
-        setIsLoading(false);
-      });
-  };
+    } catch (error) {
+        console.error(`Error fetching posts: ${error}`);
+    }
+}
+
 
   const handleAddPost = (newPostData) => {
     // Send a post request to the backend to add the new post
