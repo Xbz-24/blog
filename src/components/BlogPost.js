@@ -8,6 +8,7 @@ const BlogPosts = () => {
     // Fetch data from the backend API
     axios.get('/api/posts')
       .then(response => {
+            console.log(response.data); // Add this line
         setPosts(response.data);
       })
       .catch(error => {
