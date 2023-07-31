@@ -33,13 +33,8 @@ else
                            .AllowAnyMethod()
                            .AllowCredentials());
 }
-app.UseHttpsRedirection();
 
-// Configure CORS to allow requests from http://localhost:3000
-app.UseCors(policy => policy.WithOrigins("http://localhost:3000")
-                           .AllowAnyHeader()
-                           .AllowAnyMethod()
-                           .AllowCredentials()); // Add this line if you need to allow credentials
+app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
