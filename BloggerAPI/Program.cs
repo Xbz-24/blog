@@ -6,8 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using BloggerAPI.DbContexts;
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("BloggerDb");
-
+var connectionString = Environment.GetEnvironmentVariable("DATABASE_URL") ?? builder.Configuration.GetConnectionString("BloggerDb");
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddDbContext<BloggerContext>(options =>
@@ -21,10 +20,18 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseCors(policy => policy.WithOrigins("http://localhost:3000")
+                           .AllowAnyHeader()
+                           .AllowAnyMethod()
+                           .AllowCredentials());
 }
-
+else
+{
+    app.UseCors(policy => policy.WithOrigins("https://blog-2e5.pages.dev")
+                           .AllowAnyHeader()
+                           .AllowAnyMethod()
+                           .AllowCredentials());
+}
 app.UseHttpsRedirection();
 
 // Configure CORS to allow requests from http://localhost:3000
