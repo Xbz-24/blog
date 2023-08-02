@@ -1,25 +1,36 @@
 ﻿<Properties StartupConfiguration="{A1B94DA1-E8C5-4D8D-9DDA-535B36CA5E79}|https">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.BloggerAPI PreferredExecutionTarget="/Applications/Brave Browser.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/PostController.cs">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
     <Files>
-      <File FileName="Controllers/PostController.cs" Line="7" Column="12" />
+      <File FileName="Controllers/PostController.cs" />
+      <File FileName="DbContexts/BloggerContext.cs" />
+      <File FileName="Migrations/20230730230652_InitialCreate.cs" />
+      <File FileName="Migrations/BloggerContextModelSnapshot.cs" />
+      <File FileName="Models/Post.cs" />
+      <File FileName="Properties/launchSettings.json" />
+      <File FileName="Program.cs" Line="43" Column="2" />
+      <File FileName="appsettings.json" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="BloggerAPI">
-            <Node name="BloggerAPI" expanded="True">
+            <Node name="BloggerAPI">
               <Node name="Controllers" expanded="True" />
+              <Node name="Migrations" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.BloggerAPI PreferredExecutionTarget="/Applications/Brave Browser.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
 </Properties>

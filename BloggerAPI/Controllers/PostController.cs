@@ -18,7 +18,6 @@ namespace BloggerAPI.Controllers
     {
       _context = context;
     }
-
     // GET: api/posts
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Post>>> GetPosts()
@@ -29,15 +28,10 @@ namespace BloggerAPI.Controllers
         }
         catch (Exception ex)
         {
-            // Log the exception message - replace this with your logging framework of choice
             Console.WriteLine(ex.Message);
-
-            // Optionally return the exception message in the API response
             return StatusCode(500, $"Internal server error: {ex.Message}");
         }
     }
-
-
     // POST: api/posts
     [HttpPost]
     public async Task<ActionResult<Post>> CreatePost(Post post)
@@ -46,10 +40,8 @@ namespace BloggerAPI.Controllers
       {
         return BadRequest();
       }
-
       _context.Posts.Add(post);
       await _context.SaveChangesAsync();
-
       return CreatedAtAction(nameof(GetPosts), new { id = post.Id }, post);
     }
   }

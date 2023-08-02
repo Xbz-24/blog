@@ -10,10 +10,9 @@ const BlogPosts = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    // Fetch data from the backend API
     api.get('/api/posts')
       .then(response => {
-            console.log(response.data); // Add this line
+            console.log(response.data);
         setPosts(response.data);
       })
       .catch(error => {

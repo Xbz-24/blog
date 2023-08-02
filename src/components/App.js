@@ -8,7 +8,6 @@ function App() {
       <h1>My Blog</h1>
       <NewPostForm />
       <BlogPosts />
-      {/* Other components and content */}
     </div>
   );
 }

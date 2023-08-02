@@ -8,17 +8,17 @@ using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = Environment.GetEnvironmentVariable("DATABASE_URL") ?? builder.Configuration.GetConnectionString("BloggerDb");
-// Add services to the container.
+
 builder.Services.AddControllers();
-builder.Services.AddDbContext<BloggerContext>(options =>
-    options.UseNpgsql(connectionString));
+builder.Services.AddDbContext<BloggerContext>(
+    options => options.UseNpgsql(connectionString)
+);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseCors(policy => policy.WithOrigins("http://localhost:3000")
@@ -41,9 +41,7 @@ app.UseAuthorization();
 app.MapControllers();
 app.UseStaticFiles(new StaticFileOptions
 {
-    FileProvider = new PhysicalFileProvider(
-        Path.Combine(Directory.GetCurrentDirectory(), "../build")),
+    FileProvider = new PhysicalFileProvider("/build"), 
     RequestPath = ""
 });
-
 app.Run();
