@@ -1,17 +1,119 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  padding: 10px;
-  background-color: #f4f4f4;
+  padding: 20px;
+  background-color: #fafafa; /* Lighter background */
+  color: #333;
 }
 
 h1 {
   text-align: center;
-  color: #333;
+  color: #444; /* Slightly darker shade for better readability */
+  border-bottom: 3px solid #444; /* Matching border color and thickness */
+  padding-bottom: 10px;
+  margin-bottom: 30px; /* Increased margin for better spacing */
 }
 
 .container {
-  width: 80%;
+  max-width: 80%;
   margin: auto;
-  overflow: auto;
+  background: #fff;
+  padding: 30px; /* Increased padding for better spacing */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05); /* Softer shadow */
+}
+
+.form-control {
+  width: 100%;
+  padding: 15px; /* More padding for better visual appeal */
+  margin: 15px 0; /* Increased margin for spacing */
+  border: 1px solid #ddd;
+  border-radius: 4px; /* Rounded corners */
+}
+
+.button-primary {
+  display: block;
+  width: 100%;
+  padding: 15px; /* More padding for better visual appeal */
+  background: #55a9ee;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border-radius: 4px; /* Rounded corners */
+}
+
+.button-primary:hover {
+  background: #4d98d6;
+}
+
+.BlogPost {
+  padding: 30px; /* Increased padding for better spacing */
+  border: 1px solid #eee; /* Softer border color */
+  margin: 30px 0; /* Increased margin for better spacing */
+  border-radius: 4px; /* Rounded corners */
+}
+
+.BlogPost h2 {
+  margin-top: 0;
+  color: #333; /* Darker color for better readability */
+}
+
+.BlogPost p {
+  margin: 15px 0; /* Increased margin for better spacing */
+}
+
+/* Previous CSS rules */
+
+/* Sidebar */
+.sidebar {
+  width: 25%;
+  float: left;
+  background: #f9f9f9;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 8px 0;
+  transition: background 0.3s ease;
+}
+
+.sidebar ul li:hover {
+  background: #f0f0f0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Main content */
+.main-content {
+  width: 75%;
+  float: right;
+  padding: 20px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.BlogPost {
+  animation: fadeIn 0.5s ease;
+}
+
+/* Add a visual separator between posts */
+.BlogPost:not(:last-child) {
+  border-bottom: 1px solid #eee;
 }
