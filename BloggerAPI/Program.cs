@@ -1,3 +1,4 @@
+using System.IO;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,6 +19,15 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+var contentRoot = app.Environment.ContentRootPath; 
+var buildPath = Path.Combine(contentRoot, "build");
+
+if (!Directory.Exists(buildPath))
+{
+    // Provide fallback behavior or handle the error accordingly
+    Console.WriteLine($"Warning: The directory '{buildPath}' does not exist.");
+    buildPath = contentRoot; // Use the application root directory as the fallback
+}
 
 if (app.Environment.IsDevelopment())
 {
@@ -35,13 +45,11 @@ else
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
 app.UseStaticFiles(new StaticFileOptions
 {
-    FileProvider = new PhysicalFileProvider("/build"), 
+    FileProvider = new PhysicalFileProvider(buildPath), 
     RequestPath = ""
 });
 app.Run();
