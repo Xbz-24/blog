@@ -12,7 +12,6 @@ function App() {
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
-          {/* Add more links as needed */}
         </ul>
       </div>
       <div className="main-content">
